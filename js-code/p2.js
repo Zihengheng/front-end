@@ -21,18 +21,20 @@
 // stringTrans("tesESDFSDFstte-Rtest-egsge-ese_hsiueh");
 
 function stringTrans(str){
+    //[] METHOD
     var str1 = str.toLowerCase();
-    var newStr = "";
-    //test add str
-    for (var i=0;i<=str1.length;i++){
-        if(str1[i]!=="-"&&str1[1]!=="_"){
-            newStr+=str1[i];
+    var arr1 = str1.split("");
+    var newArr = [];
+    for (var i=0; i<=arr1.length; i++){
+        if(arr1[i]== "-"|| arr1[i]== "_"){
+            arr1[i+1].toUpperCase();
+            continue;
         }
         else{
-            continue;
-            str1[i+1].toUpperCase();
+            newArr = newArr.concat(arr1[i]);
         }
     }
+    var newStr = newArr.join();
     console.log(newStr);
 }
 //test
