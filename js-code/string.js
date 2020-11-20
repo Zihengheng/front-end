@@ -1,3 +1,7 @@
+//print
+function print(content){
+    return console.log(content);
+}
 //获取索引
 function indexExp (str1){
     console.log(str1.indexOf('c'));
@@ -65,4 +69,10 @@ function practice2(){
     console.log(arr1);
     console.log(newArr);
 }
-practice2();
+// practice2();
+//string output
+function outputStr(){
+    var str = "asdafaodfhoaif"
+    print(str[3]);
+}
+outputStr();
