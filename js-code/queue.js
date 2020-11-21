@@ -10,7 +10,7 @@ function hotPotato(list, num){
     for(var i=0; i<list.length; i++) {
         queue.push(list[i]);
     }
-    //num = 1
+    //num = 1:
     print(queue);
     outq = queue.shift();
     queue.push(outq);
@@ -30,5 +30,5 @@ function hotPotato(list, num){
     }
     var list = ["Bill", "David", "Susan", "Jane", "Kenet", "brad"];
     var num = 7;
-hotPotato(list, num);
+// hotPotato(list, num);
 
