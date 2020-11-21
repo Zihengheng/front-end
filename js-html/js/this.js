@@ -50,7 +50,7 @@ function fn1(a){
 const arr1 = [3, 7, 10 ,8];
 
 const maxValue = Math.max.apply(Math, arr1);
-print(maxValue);
+// print(maxValue);
 
 const minValue = Math.min.apply(Math, arr1);
-print(minValue);
+// print(minValue);
