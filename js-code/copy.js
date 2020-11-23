@@ -36,6 +36,30 @@ const objB = {
 // console.log(JSON.stringify(objB));
 
 //用 for in 递归实现深拷贝
+const objOld = {
+    name: 'qianguyihao',
+    age: 28,
+    info: {
+        desc: 'hello',
+    },
+    color: ['red', 'blue', 'green'],
+};
 function deepCopy(newObj, oldObj){
-    
+    for (let key in oldObj){
+        let item = oldObj[key];
+        // console.log(item);
+        if (item instanceof Array){
+            newObj[key]= [];
+            deepCopy(newObj[key], item);
+        }else if(item instanceof Object){
+            newObj[key]= {};
+            deepCopy(newObj[key], item);
+        }
+        else{
+            newObj[key]= item;
+        }
+    }
 }
+let objNew = {};
+deepCopy(objNew, objOld);
+console.log(objNew);
