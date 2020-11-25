@@ -1,21 +1,34 @@
-function p3(str){
-    let checkstr = "({[]})"
-    let arr = [];
+//给定⼀个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+
+//my printer
+function print(content){
+    return console.log(content);
+}
+
+var str1 = "()[]";
+var str2 = "()[";
+var str3 = "()[]{";
+function braMatching(str){
+    let arr = str.split("");
     let stack = [];
-    arr = str.split("");
+    let result = true;
+    let checkStr = "([{}])"
     let index = -1;
-    let result = true
-    // console.log(arr);
-    for(let i=0; i<length; i++){
-        index = 
+    for(let i=0;i<arr.length;i++){
+        index = checkStr.indexOf(arr[i]);
         if(index<3){
             stack.push(arr[i]);
         }
-        else{
-
+        else if (index>3){
+            if(stack.length==0||stack.pop()!== checkStr[5-index]){
+                result = false;
+            }
         }
     }
+    if(stack.length){
+        result = false;
+    }
+    print(result);
 }
 
-str = "()";
-console.log(p3(str));
+braMatching(str1);
