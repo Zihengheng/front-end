@@ -20,4 +20,10 @@ function Super(){
 function Sub(){}
 //child inherits from parent
 Sub.prototype = new Super();
+// new a child 
+var ins1 = new Sub();
+ins1.color.push('green')
+var ins2 = new Sub();
+
+print(ins2.color);
 
