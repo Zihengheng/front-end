@@ -18,6 +18,17 @@ function Sub(name, age){
 Sub.prototype = new Super();
 Sub.prototype.constructor = Sub;
 
-var ins1 = new Sub('ins1',18);
-console.log(ins1);
-ins1.sayname();
+// var ins1 = new Sub('ins1',18);
+// console.log(ins1);
+// ins1.sayname();
+
+//原型式继承
+//借助原型，基于已有的对象创建新对象。
+var person = {
+    name:'Person'
+};
+
+var anthorp = Object.create(person);
+//得到一个以person为原型的构造函数的实例
+console.log(anthorp);
+console.log(anthorp.name);

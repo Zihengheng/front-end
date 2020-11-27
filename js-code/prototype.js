@@ -25,5 +25,5 @@ var ins1 = new Sub();
 ins1.color.push('green')
 var ins2 = new Sub();
 
-print(ins2.color);
+// print(ins2.color);
 
