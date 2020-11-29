@@ -43,9 +43,18 @@ var myJson = {
     bbb:222,
 };
  //json遍历的方法：for...in.
- for (var key in myJson){
-     print(key);
-     print(myJson[key]);
-     print('------');
- }
+//  for (var key in myJson){
+//      print(key);
+//      print(myJson[key]);
+//      print('------');
+//  }
+
+ var myJson = {
+    "Student":[
+      {"id":"1","name":"zhangsan"},
+      {"id":"2", "name":"lisi"},
+    ]
+  }
+  var obj1 = JSON.parse(myJson);
+  print(obj1);
 

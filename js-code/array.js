@@ -28,4 +28,10 @@ function bubbleSort(){
     }
     print(arr);
 }
-bubbleSort();
+// bubbleSort();
+
+//数组的map()
+var numbers = [4,9,16,15];
+var arr = [];
+arr = numbers.map(item =>{return item*2});
+// print(arr);
