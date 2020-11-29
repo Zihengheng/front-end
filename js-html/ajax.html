@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>Send get request</h1>
+	<h2></h2>
+	<input type="button" value="发送get_ajax请求" id='btn1'>
+
+	<script type="text/javascript">
+		//bind onclick function
+		document.querySelector('#btn1').onclick = function(){
+			// 发送ajax 请求 需要 五步
+
+        	// （1）创建异步对象
+        	var ajaxObj = new XMLHttpRequest();
+        	// （2）设置请求的参数。包括：请求的方法、请求的url。
+        	ajaxObj.open('get', 'data/name.json')
+
+        	//send request
+        	ajaxObj.send();
+        	//onreadystatechange
+        	ajaxObj.onreadystatechange = function(){
+        		if(ajaxObj.readyState == 4 && ajaxObj.status ==200){
+        			console.log(`Successfully get callback data`);
+        			console.log(ajaxObj.responseText);
+
+        			//handle json
+        			let jsObj = JSON.parse(ajaxObj.responseText);
+        			document.querySelector('h2').innerHTML = jsObj.firstName;
+        			// document.querySelector('h1').innerHTML= ajaxObj.responseText;
+        		}
+        	}
+		}
+		
+	</script>
+</body>
+</html>
