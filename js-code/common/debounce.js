@@ -1,7 +1,13 @@
-function debounce (func){
-    let timeout = null;
-    return function(){
-        clearTimeout(timeout);
-        timeout = setTimeout(()=>{func.apply(this, arguments)},500);
-    }
+function debounce(fn,delay){
+   var timer; //维护一个timer
+   return function(){
+       var _this = this;
+       var args = arguments;
+       if(timer){
+           clearTimeout(timer);
+       }
+       timer = setTimeout(function(){
+           fn.apply(_this,args);
+       },delay);
+   };
 }
