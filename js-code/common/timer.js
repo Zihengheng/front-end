@@ -8,4 +8,8 @@ const timer = setInterval(()=>{
 }, 1000);
 
 //setTimeout()
+const timer2 = setTimeout(()=>{
+    console.log(1);
+},3000);
 
+console.log('Hi');
