@@ -46,5 +46,13 @@ function myCreate (obj){
     var clone = object(obj);
     clone.sayHi = function(){
         console.log("hi");
-    }
+    };
+
+    return clone;
 }
+
+var person1 = {
+    name:'person'
+};
+
+var anthorp3 = myCreate(person1);

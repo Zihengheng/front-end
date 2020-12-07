@@ -8,6 +8,6 @@ function debounce(fn,delay){
        }
        timer = setTimeout(function(){
            fn.apply(_this,args);
-       },delay);
+       },delay); 
    };
 }
