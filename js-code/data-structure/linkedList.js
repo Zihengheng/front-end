@@ -59,6 +59,32 @@ function sll (){
     };
     // 从链表的特定位置移除一项
     this.removeAt = function(position){
-        if()
-    }
+        if((positon<=0&&position>=length)||length===0){
+            //越界
+            return false;
+        }else{
+            let currentNode = head;
+            let index = 0;
+            let previousNode = null;
+            if(position==0){
+                head = currentNode.next;
+            }else{
+                while(index<position){
+                    index++;
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+                // 把当前节点的 next 指针 指向 
+                //当前节点的 next 指针，即是 删除了当前节点
+                previouseNode.next = currentNode.next;
+            }
+            length--;
+            return true;
+        }
+    };
+    // 从链表中移除指定项
+    this.remove = function(element){
+        let index = this.indexOf(element);
+        return this.removeAt(index);
+    };
 }
