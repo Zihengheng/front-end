@@ -33,5 +33,5 @@ function binarySearchRecursion(arr,target,low,high){
         return binarySearchRecursion(arr,target,low,high);
     }
 }
-var a = binarySearch(testArr,4);
-console.log(a);
+// var a = binarySearch(testArr,4);
+// console.log(a);
