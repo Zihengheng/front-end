@@ -11,3 +11,6 @@ function Tree(data){
     this._root = node;
 }
 //create a new tree
+var tree1 = new Tree("CEO");
+console.log(tree1._root);
+
