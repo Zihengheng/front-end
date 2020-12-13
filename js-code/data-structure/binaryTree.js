@@ -23,8 +23,63 @@ var node1 = {left: node2, right: node3, val: 1 };
 function preorder(root){
     if(!root) return;
     console.log(root.val);
-    let left = root.left;
-    let right = root.right;
+    var left = root.left;
+    var right = root.right;
+    left && preorder(left);
+    right && preorder(right);
 }
+//  console.log(preorder(node1));
+//前序遍历迭代实现
+function preorderTVS2(root){
+    if(!root) {return;}
+    let stack = [root];
+    while(stack.length>0){
+        //取第一个
+        let item = stack.shift();
+        console.log(item.val);
+        if(item.right){
+            stack.unshift(item.right);
+        }
+        if(item.left){
+            stack.unshift(item.left);
+        }
+    }
+}
+// console.log(preorderTVS2(node1))
 //中序遍历递归实现
+function inorderTVS(root){
+    if(root){
+        var left = root.left;
+        var right = root.right;
+        left && inorderTVS(left);
+        console.log(root.val);
+        right && inorderTVS(right);
+    }
+    else{return;}
+}
+// console.log(inorderTVS(node1));
+//中序遍历迭代实现
+function inorderTVS2(root){
+    if(!root){
+        return;
+    }
+    let stack = [root];
+    while(stack.length>0){
+        
+    }
+}
 //后序遍历递归实现
+function postorderTVS(root){
+    if(!root){
+        return;
+    }
+    var left = root.left;
+	var right = root.right;
+	left && postorderTVS(left);
+	right && postorderTVS(right);
+	console.log(root.val);
+}
+// console.log(postorderTVS(node1));
+// console.log(node1);
+//后序遍历迭代实现
+//广度优先：层次遍历
